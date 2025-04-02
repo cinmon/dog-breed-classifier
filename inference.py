@@ -16,7 +16,7 @@ def load_model():
         torch.nn.Linear(model.fc.in_features, len(class_names))
     )
 
-    model.load_state_dict(torch.load("model_best_weights.pt"), map_location=torch.device('cpu'))
+    model.load_state_dict(torch.load("model_best_weights_cpu.pt"), map_location=torch.device('cpu'))
     model.eval()
 
     return model
