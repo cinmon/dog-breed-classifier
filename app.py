@@ -26,7 +26,7 @@ if uploaded_file is not None:
     predicted_class, confidence = predict_image(temp_file_path, model)
 
     # Display the results
-    st.image(uploaded_file, caption="Uploaded Image", use_container_width=True)
+    # st.image(uploaded_file, caption="Uploaded Image", use_container_width=True)
 
     parsed_predicted_class = predicted_class.split("-")[1].replace("_", " ").title()
 
