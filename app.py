@@ -41,5 +41,9 @@ if uploaded_file is not None:
 
     st.success(f"I think this is a **{parsed_predicted_class}**! {random.choice(random_compliments)}")
 
+    show_confidence = st.toggle("Show confidence score")
+    if show_confidence:
+        st.write(f"I am {confidence * 100:.2f}% confident!")
+
     # Clean up the temporary file
     os.remove(temp_file_path)
