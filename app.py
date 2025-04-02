@@ -3,7 +3,7 @@ from inference import load_model, predict_image
 import random
 import os
 
-st.set_page_config(page_title="Dog Breed Classifier", page_icon="🐶", layout="centered")
+st.set_page_config(page_title="What Puppy is This?", page_icon="🐶", layout="centered")
 st.title("What doggy is this?")
 
 uploaded_file = st.file_uploader("Upload an image of a dog!", type=["jpg", "jpeg", "png"])
