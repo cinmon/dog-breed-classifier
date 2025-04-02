@@ -10,7 +10,7 @@ with open("class_names.json", "r") as f:
 
 def load_model():
 
-    model = models.resetnet18(pretrained=False) # false when running inference
+    model = models.resnet18(pretrained=False) # false when running inference
     model.fc = torch.nn.Sequential(
         torch.nn.Dropout(0.5),
         torch.nn.Linear(model.fc.in_features, len(class_names))
