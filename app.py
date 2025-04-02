@@ -28,7 +28,7 @@ if uploaded_file is not None:
     predicted_class, confidence = predict_image(temp_file_path, model)
 
     # Display the results
-    st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
+    st.image(uploaded_file, caption="Uploaded Image", use_container_width=True)
     st.success(f"Prediction: **{predicted_class}** ({confidence * 100:.2f}% confident)")
 
     # Clean up the temporary file
