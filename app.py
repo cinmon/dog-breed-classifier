@@ -10,8 +10,7 @@ uploaded_file = st.file_uploader("Upload an image of a dog!", type=["jpg", "jpeg
 if uploaded_file is not None:
 
     # Save the uploaded file to a temporary location
-    st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
-    st.write("Classifying...")
+    st.image(uploaded_file, caption="Uploaded Image", use_container_width=True)
 
     temp_file_path = "temp_image.jpg"
     with open(temp_file_path, "wb") as f:
@@ -20,8 +19,6 @@ if uploaded_file is not None:
 
     # Load the model
     model = load_model()
-
-    st.write("Model loaded")
     st.write("Thinking...")
 
     # Predict the breed of the dog in the uploaded image
@@ -29,7 +26,10 @@ if uploaded_file is not None:
 
     # Display the results
     st.image(uploaded_file, caption="Uploaded Image", use_container_width=True)
-    st.success(f"I am {confidence * 100:.2f}% confident that this is a **{predicted_class}**!")
+
+    parsed_predicted_class = predicted_class.split("-")[1].replace("_", " ").title()
+
+    st.success(f"I think this is a **{parsed_predicted_class}**!")
 
     # Clean up the temporary file
     os.remove(temp_file_path)
