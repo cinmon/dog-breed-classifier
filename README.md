@@ -35,6 +35,7 @@ The model achieved a maximum Top-1 validation accuracy of 76.21%. I'd like to en
 
 I'd like to add:
 
+- Train using focal loss to compensate for lower-frequency classes
 - Adjust parameters/change model for higher accuracy.
 - Add more data augmentation so the model can stay robust to different angles or lightings.
 - Explainability features:
